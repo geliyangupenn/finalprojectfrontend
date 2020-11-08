@@ -2,28 +2,86 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import history from './history';
+
+import { withRouter } from 'react-router-dom';
+
 class UserRegistration extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            confirm: false,
+            username: "",
+            password: ""
+        }
+    }
+
+    register = () => {
+        alert(
+            `USERNAME: ${this.nameinput.value} PASSWORD: ${this.passwordinput.value} REGDATE: ${new Date()}`
+        )
+
+        if (this.nameinput && this.passwordinput) {
+            this.setState({
+                username: this.nameinput.value,
+                password: this.passwordinput.value,
+                registrationDate: new Date(),
+                confirm: true
+            });
+        }
+    }
+
+    renderConfirmation = () => {
+        const { history } = this.props;
+        return (
+            <>
+                <Header>
+                    User Registration
+                </Header>
+                <Button onClick = {() => history.push('/login')}>
+                    Confirm Registration
+                </Button>
+            </>
+        )
+    }
+
+
+    renderForm = () => {
+        return (
+            <>
+                <Header>
+                    User Registration
+                </Header>
+                <Form>
+                    <FormHeader >Username</FormHeader>
+                    <StyledInput 
+                        ref = {node => this.nameinput = node}
+                        placeholder = {"Enter Username"}
+                    />
+                </Form>
+                <Form>
+                    <FormHeader>Password</FormHeader>
+                    <StyledInput 
+                        type = {"password"}
+                        ref = {node => this.passwordinput = node}
+                        placeholder = {"Enter Password"}
+                    />
+                </Form>
+                <Bottom>
+                    <Button onClick = {this.register}>
+                        Register
+                    </Button>
+                </Bottom>
+            </>
+        )
+    }
 
     render(){
+        const { confirm } = this.state;
         return (
             <Background>
                 <Container>
-                    <Header>
-                        User Registration
-                    </Header>
-                    <Form>
-                        <FormHeader >Username</FormHeader>
-                        <StyledInput placeholder = {"Enter Username"}/>
-                    </Form>
-                    <Form>
-                        <FormHeader>Password</FormHeader>
-                        <StyledInput placeholder = {"Enter Password"}/>
-                    </Form>
-                    <Bottom>
-                        <Button>
-                            Register
-                        </Button>
-                    </Bottom>
+                    {confirm ? this.renderConfirmation() : this.renderForm()}
                 </Container>
             </Background>
            
@@ -31,7 +89,7 @@ class UserRegistration extends React.Component {
     }
 }
 
-export default UserRegistration;
+export default  withRouter(UserRegistration);
 
 const Bottom = styled.div`
     display: flex;
@@ -50,6 +108,7 @@ const Button = styled.div`
     font-weight: 500;
     color: white;
     font-size: 1rem;
+    cursor: pointer;
 `
 
 const StyledInput = styled.input`
