@@ -43,8 +43,8 @@ class ProfilePage extends React.Component {
     const { username } = this.props;
     const { registrationDate, message } = this.state;
     return [
-      <h1 id="pageTitle" style={{ textAlign: 'center' }}>User Profile Page</h1>,
-      <div>
+      <h1 key={0} id="pageTitle" style={{ textAlign: 'center' }}>User Profile Page</h1>,
+      <div key={1} > 
         {message !== '' ? (
           <div id="messageDiv" style={{ margin: 'auto', textAlign: 'center', color: 'blue' }}>
             {message}
