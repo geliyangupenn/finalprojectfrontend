@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfilePage matches snapshot 1`] = `
+Array [
+  <h1
+    id="pageTitle"
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    User Profile Page
+  </h1>,
+  <div>
+    <div>
+      <div
+        className="infoDiv"
+        id="avatarImageDiv"
+        style={
+          Object {
+            "backgroundImage": "url(images/defaultAvatar.jpeg)",
+          }
+        }
+      />
+      <div
+        className="infoDiv"
+        id="usernameDiv"
+      >
+        <span
+          style={
+            Object {
+              "color": "blue",
+            }
+          }
+        >
+           Username: 
+        </span>
+         
+        john
+      </div>
+      <div
+        className="infoDiv"
+        id="registrationDiv"
+      >
+        <span
+          style={
+            Object {
+              "color": "blue",
+            }
+          }
+        >
+           Registration Date: 
+        </span>
+         
+        11/08/2020
+      </div>
+    </div>
+    <br />
+    <br />
+    <input
+      id="passwordChangeInput"
+      onKeyDown={[Function]}
+      placeholder="Change your password"
+      type="password"
+    />
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Change
+    </button>
+    <br />
+    <br />
+    <br />
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+      type="button"
+    >
+      Deactivate Account
+    </button>
+  </div>,
+]
+`;
