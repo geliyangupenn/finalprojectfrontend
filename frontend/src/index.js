@@ -9,9 +9,7 @@ import UserRegistration from './UserRegistration';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserRegistration/>
-    {/* <App /> */}
-    <LoginPage/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
