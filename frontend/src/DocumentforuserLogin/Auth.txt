@@ -1,0 +1,4 @@
+Initial setup for the User Auth/Login page
+when a user entered name and password in respective input boxes
+The app will print the name and passwork in the h2 header's innerHtml and i will be able to check from the database whether this is a valid Login
+The forgetpassword button is created if user wants to change password. The functionality is not implemented for now.
