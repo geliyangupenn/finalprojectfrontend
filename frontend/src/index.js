@@ -5,8 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LoginPage from './userLoginAuth';
 
+import UserRegistration from './UserRegistration';
+
 ReactDOM.render(
   <React.StrictMode>
+    <UserRegistration/>
     {/* <App /> */}
     <LoginPage/>
   </React.StrictMode>,
