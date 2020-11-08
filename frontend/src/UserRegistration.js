@@ -17,7 +17,8 @@ class UserRegistration extends React.Component {
     }
 
     checkValid = (password) => {
-        if (password.length < 10) {
+        let filter = /^[0-9a-zA-Z]+$/;
+        if (password.length < 10 || !this.passwordinput.value.match(filter)) {
             return false
         }
     }
