@@ -58,32 +58,44 @@ Array [
     </div>
     <br />
     <br />
-    <input
-      id="passwordChangeInput"
-      onKeyDown={[Function]}
-      placeholder="Change your password"
-      type="password"
-    />
-    <button
-      onClick={[Function]}
-      type="button"
+    <div
+      className="infoDiv"
     >
-      Change
-    </button>
+      <input
+        id="passwordChangeInput"
+        onKeyDown={[Function]}
+        placeholder="Change your password"
+        type="password"
+      />
+      <button
+        className="infoDiv"
+        onClick={[Function]}
+        type="button"
+      >
+        Change
+      </button>
+    </div>
     <br />
     <br />
     <br />
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "red",
+    <div
+      className="infoDiv"
+    >
+      <button
+        className="infoDiv"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "red",
+            "margin": "auto",
+            "textAlign": "center",
+          }
         }
-      }
-      type="button"
-    >
-      Deactivate Account
-    </button>
+        type="button"
+      >
+        Deactivate Account
+      </button>
+    </div>
   </div>,
 ]
 `;

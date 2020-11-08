@@ -65,22 +65,30 @@ class ProfilePage extends React.Component {
         </div>
         <br/>
         <br/>
-        <input 
-          type="password" 
-          placeholder="Change your password"
-          id="passwordChangeInput"
-          ref={this.passwordChangeInput}
-          onKeyDown={(evt) => this.handleKeypress(evt)}
-        />
-        <button type="button" onClick={() => this.changePassword()}>
-          Change
-        </button>
+        <div className="infoDiv">
+          <input 
+            type="password" 
+            placeholder="Change your password"
+            id="passwordChangeInput"
+            ref={this.passwordChangeInput}
+            onKeyDown={(evt) => this.handleKeypress(evt)}
+          />
+          <button type="button" onClick={() => this.changePassword()} className="infoDiv" >
+            Change
+          </button>
+        </div>
         <br/>
         <br/>
         <br/>
-        <button type="button" onClick={() => this.deactivateAccount()} style={{color: "red"}}>
-          Deactivate Account
-        </button>
+        <div className="infoDiv">
+          <button className="infoDiv"
+            type="button"
+            onClick={() => this.deactivateAccount()}
+            style={{color: "red", margin: 'auto', textAlign: 'center',}}
+          >
+            Deactivate Account
+          </button>
+        </div>
       </div>
     ];
   }
