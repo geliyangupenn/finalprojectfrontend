@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import UserRegistration from './UserRegistration';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UserRegistration/>
   </React.StrictMode>,
   document.getElementById('root')
 );
