@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserRegistration matches snapshot 1`] = `
+<div
+  className="sc-gKsewC cJXMLs"
+>
+  <div
+    className="sc-jSgupP iDglDZ"
+  >
+    <div
+      className="sc-iBPRYJ cbQAKu"
+    >
+      User Registration
+    </div>
+    <div
+      className="sc-hKgILt bPudnP"
+    >
+      <div
+        className="sc-eCssSg gorlUd"
+      >
+        Username
+      </div>
+      <input
+        className="sc-dlfnbm bBYzMz"
+        placeholder="Enter Username"
+      />
+    </div>
+    <div
+      className="sc-hKgILt bPudnP"
+    >
+      <div
+        className="sc-eCssSg gorlUd"
+      >
+        Password
+      </div>
+      <input
+        className="sc-dlfnbm bBYzMz"
+        placeholder="Enter Password"
+      />
+    </div>
+    <div
+      className="sc-bdfBwQ gQptEk"
+    >
+      <div
+        className="sc-gsTCUz eSIwkN"
+      >
+        Register
+      </div>
+    </div>
+  </div>
+</div>
+`;
