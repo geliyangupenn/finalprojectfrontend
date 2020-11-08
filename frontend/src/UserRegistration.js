@@ -21,6 +21,7 @@ class UserRegistration extends React.Component {
         if (password.length < 10 || !this.passwordinput.value.match(filter)) {
             return false
         }
+        return true
     }
 
     register = () => {
