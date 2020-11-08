@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage matches snapshot 1`] = `
+Array [
+  <h1
+    id="h1"
+  >
+    User Login
+  </h1>,
+  <div>
+    <label
+      for="name"
+    >
+      UserName: 
+    </label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+    />
+  </div>,
+  <div>
+    <label
+      for="password"
+    >
+      Password: 
+    </label>
+    <input
+      id="password"
+      name="password"
+      type="password"
+    />
+  </div>,
+  <button
+    onClick={[Function]}
+    type="submit"
+  >
+    Login
+  </button>,
+  <button
+    id="resetpassword"
+    type="submit"
+  >
+    forgot password?
+  </button>,
+  <h2
+    id="h2"
+  />,
+]
+`;
