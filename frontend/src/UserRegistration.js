@@ -16,18 +16,26 @@ class UserRegistration extends React.Component {
         }
     }
 
-    register = () => {
-        alert(
-            `USERNAME: ${this.nameinput.value} PASSWORD: ${this.passwordinput.value} REGDATE: ${new Date()}`
-        )
+    checkValid = (password) => {
+        if (password.length < 10) {
+            return false
+        }
+    }
 
+    register = () => {
         if (this.nameinput && this.passwordinput) {
-            this.setState({
-                username: this.nameinput.value,
-                password: this.passwordinput.value,
-                registrationDate: new Date(),
-                confirm: true
-            });
+            alert(`USERNAME: ${this.nameinput.value} PASSWORD: ${this.passwordinput.value} REGDATE: ${new Date()}`)
+
+            if (this.checkValid(this.passwordinput.value)) {
+                this.setState({
+                    username: this.nameinput.value,
+                    password: this.passwordinput.value,
+                    registrationDate: new Date(),
+                    confirm: true
+                });
+            } else {
+                alert("PASSWORD NOT CORRECT")
+            }
         }
     }
 
