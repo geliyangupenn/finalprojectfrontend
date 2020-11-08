@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import LoginPage from './userLoginAuth';
 
 import UserRegistration from './UserRegistration';
 
 ReactDOM.render(
   <React.StrictMode>
     <UserRegistration/>
+    {/* <App /> */}
+    <LoginPage/>
   </React.StrictMode>,
   document.getElementById('root')
 );
