@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import LoginPage from './userLoginAuth';
+import LoginPage from './LoginPage';
 
 import UserRegistration from './UserRegistration';
 
