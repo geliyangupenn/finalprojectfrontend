@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import LoginPage from './userLoginAuth';
+import LoginPage from './LoginPage';
 
 const renderer = require('react-test-renderer');
 
