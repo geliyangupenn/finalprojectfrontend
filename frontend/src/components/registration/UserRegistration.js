@@ -1,10 +1,17 @@
 import React from 'react';
 
+//styles
 import styled from 'styled-components';
 
-import history from './history';
-
+//router
+import history from '../../history';
 import { withRouter } from 'react-router-dom';
+
+//redux
+import { connect } from 'react-redux';
+
+//actions
+import { createUser } from '../../actions/UserActions';
 
 class UserRegistration extends React.Component {
     constructor(props){
@@ -14,6 +21,15 @@ class UserRegistration extends React.Component {
             username: "",
             password: ""
         }
+    }
+
+    componentDidMount = () => {
+        const { auth, createUser } = this.props;   // FROM REDUCER  --- both actions and reducer state are stored in props
+        console.log("AUTH", auth);
+
+        const formValues = {firstName: "a", lastName: "b", userName: "c", password: "d"};
+
+        createUser(formValues);
     }
 
     checkValid = (password) => {
@@ -99,7 +115,17 @@ class UserRegistration extends React.Component {
     }
 }
 
-export default  withRouter(UserRegistration);
+const mapStateToProps = (state) => {
+    const { auth } = state;
+
+    return {
+        auth
+    }
+}
+
+
+export default (connect(mapStateToProps, { createUser })(UserRegistration));
+//withRouter(UserRegistration);
 
 const Bottom = styled.div`
     display: flex;
