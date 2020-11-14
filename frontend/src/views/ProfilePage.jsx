@@ -16,7 +16,7 @@ class ProfilePage extends React.Component {
     // Get registration date from backend
     this.setState({
       registrationDate: '11/08/2020',
-    });
+    }); 
   }
 
 

@@ -5,7 +5,7 @@ import history from './history';
 
 //router
 import { Router, Route, Switch } from 'react-router-dom';
-import UserRegistration from './UserRegistration';
+import UserRegistration from './components/registration/UserRegistration';
 import LoginPage from './userLoginAuth';
 import ProfilePage from './views/ProfilePage';
 
