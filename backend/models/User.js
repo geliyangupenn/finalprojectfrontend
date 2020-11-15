@@ -10,7 +10,7 @@ let userSchema = new Schema({
     firstName: {type: String},
     lastName: {type: String},
     creationDate: {type: Date, default: Date.now },
-    imageLink: {type: String},
+    imageLink: {type: String, default: ""},
     contacts: [{type: ObjectId, ref: 'User'}]
 });
 

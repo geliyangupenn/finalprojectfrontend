@@ -8,7 +8,7 @@ let statusSchema = new Schema({
     creator: {type: ObjectId, ref: 'User'},
     creationDate: {type: Date, default: Date.now },
     text: {type: String},
-    imageLink: {type: String},
+    imageLink: {type: String, default: ""},
     seenBy: [{type: ObjectId, ref: 'User'}]
 });
 

@@ -10,4 +10,9 @@ router.delete('/users/delete/:userId', userController.deleteUser);
 router.put('/users/:userId/add_contact/:contactId', userController.addUserContact);
 router.put('/users/:userId/remove_contact/:contactId', userController.removeUserContact);
 
+const statusController = require('../controllers/StatusController');
+router.post('/statuses/create', statusController.createStatus);
+router.get('/statuses/get/:userId', statusController.getStatuses);
+
+
 module.exports = router;
