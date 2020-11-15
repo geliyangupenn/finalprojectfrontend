@@ -1,4 +1,5 @@
 const Status = require('../models/Status');
+const User = require('../models/User');
 const mongoose = require('mongoose')
 const { ObjectId } = mongoose.Types;
 
@@ -36,12 +37,15 @@ getStatuses = async (req, res) => {
   let statuses;
 
   try {
+    let user = await User.findOne({_id: userId}).exec();
+    const { contacts } = user;
     statuses = await Status.aggregate([
       { 
         $match: { 
           $and: [
-            { creator: { $ne: userId } },
-            { seenBy: { $nin: [userId] } }, 
+            { creator: { $in : contacts } },
+            { creator: { $ne: ObjectId(userId) } },
+            { seenBy: { $nin: [ ObjectId(userId) ] } }, 
           ]
         }
       },
@@ -71,11 +75,35 @@ getStatuses = async (req, res) => {
       },
     ]).exec();
   } catch (err) {
-    return res.json({success: false, error: "getStatuses Error: find query failed", trace: err});
+    return res.json({success: false, error: "getStatuses Error: findOne or aggregate query failed", trace: err});
   }
   
   return res.json({success:true, result: statuses});
 }
 
+seeStatuses = async (req, res) => {
+  const { userId, statusIds } = req.body;
+  console.log(statusIds);
+  if (!checkValid(userId) || !checkValid(statusIds)) {
+    return res.json({success: false, error: "seeStatuses Error: required body not provided"});
+  }
 
-module.exports = { createStatus, getStatuses }
+  let statuses = [];
+  let update = {};
+  update.seenBy = ObjectId(userId);
+
+  try {
+    for (let i = 0; i < statusIds.length; i++) {
+      statusId = statusIds[i];
+      const s = await Status.findByIdAndUpdate(statusId, { $push: update }, { new: true }).lean().exec();
+      statuses.push(s);
+    }
+  } catch (err) {
+    return res.json({success: false, error: "seeStatuses Error: findOneAndUpdate failed", trace: err});
+  }
+
+  return res.json({success:true, result: statuses });
+}
+
+
+module.exports = { createStatus, getStatuses, seeStatuses }

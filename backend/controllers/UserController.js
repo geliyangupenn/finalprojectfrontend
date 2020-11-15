@@ -90,16 +90,15 @@ deleteUser = async (req, res) => {
 
 addUserContact = async (req, res) => {
 
-    const userId = req.params;
-    const { contactId } = req.body;
-   
+    const { userId, contactId } = req.params;
+
     let user;
 
     let update = {};
     update.contacts = ObjectId(contactId);
 
     // populate and select only whats needed -- tag and id
-    let query = Document.findOneAndUpdate({_id: userId}, { $push: update }, { new: true }).lean();
+    let query = User.findOneAndUpdate({_id: userId}, { $push: update }, { new: true }).lean();
     query.populate('contacts');
 
     try {
@@ -115,16 +114,15 @@ addUserContact = async (req, res) => {
 
 removeUserContact = async (req, res) => {
 
-    const userId = req.params;
-    const { contactId } = req.body;
-   
+    const { userId, contactId } = req.params;
+    
     let user;
 
     let update = {};
     update.contacts = ObjectId(contactId);
 
     // populate and select only whats needed -- tag and id
-    let query = Document.findOneAndUpdate({_id: userId}, { $pull: update }, { new: true }).lean();
+    let query = User.findOneAndUpdate({_id: userId}, { $pull: update }, { new: true }).lean();
     query.populate('contacts');
 
     try {

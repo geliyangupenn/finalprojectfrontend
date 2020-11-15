@@ -13,6 +13,7 @@ router.put('/users/:userId/remove_contact/:contactId', userController.removeUser
 const statusController = require('../controllers/StatusController');
 router.post('/statuses/create', statusController.createStatus);
 router.get('/statuses/get/:userId', statusController.getStatuses);
+router.put('/statuses/see', statusController.seeStatuses);
 
 
 module.exports = router;
