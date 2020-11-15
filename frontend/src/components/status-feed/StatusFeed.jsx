@@ -20,7 +20,9 @@ class StatusFeed extends React.Component {
       history.push('/login');
     }
     this.dealWithGettingStatuses(auth, (result) => {
-      this.tellServerStatusesWereSeen(auth, result, () => {});
+      if (result.length > 0) {
+        this.tellServerStatusesWereSeen(auth, result, () => {});
+      }
       this.setState({ statuses: result });
     });
   }
