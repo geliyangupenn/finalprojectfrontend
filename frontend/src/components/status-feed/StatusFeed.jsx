@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import history from '../../history';
 
-class ActivityFeed extends React.Component {
+class StatusFeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,7 +36,7 @@ class ActivityFeed extends React.Component {
     return (
       <Container>
         <NavBar>
-          Activity Feed
+          Status Feed
         </NavBar>
         {elements.map( (_ele, index) => {
           return (
@@ -66,7 +66,7 @@ class ActivityFeed extends React.Component {
   }
 }
 
-export default ActivityFeed;
+export default StatusFeed;
 
 const Container = styled.div`
   width: 100%;
